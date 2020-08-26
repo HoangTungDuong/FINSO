@@ -1,0 +1,11 @@
+.name-tag {
+  width: 300px !important;
+}
+
+.card-profile{
+  padding: 15px;
+}
+
+.card-profile .control {
+  margin-bottom: 15px;
+}

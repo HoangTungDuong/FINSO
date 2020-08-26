@@ -3,18 +3,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router';
-import App from './App';
+import './styles/App.css'
 import configureStore, { history } from './configureStore';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-
+import HomeComponent from './components/HomeComponent';
+import 'bootstrap/dist/css/bootstrap.min.css';
 const store = configureStore()
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}> { /* place ConnectedRouter under Provider */}
       <>
         <Switch>
-          <Route exact path="/Home" component={App} />
+          <Route exact path="/" component={HomeComponent} />
         </Switch>
       </>
     </ConnectedRouter>

@@ -16,3 +16,5 @@ export default function configureStore(preloadedState) {
  
   return store
 }
+
+export const store = configureStore();

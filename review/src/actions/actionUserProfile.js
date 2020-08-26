@@ -1,0 +1,1 @@
+export const SAVE_USER_PROFILE = 'SAVE_USER_PROFILE';
