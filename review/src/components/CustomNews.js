@@ -2,12 +2,23 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { getCustomNews } from '../utils/utilNews';
+import NewsList from './NewsList';
 
 class CustomNews extends Component {
   constructor(props) {
     super(props)
     this.state = {
       listCustomNews: []
+    }
+  }
+
+  UNSAFE_componentWillMount(){
+    if(this.props?.userPreference?.id){
+      getCustomNews(this.props.userPreference.id).then((news)=>{
+        this.setState({
+          listCustomNews: news.articles
+        })
+      })
     }
   }
 
@@ -22,20 +33,11 @@ class CustomNews extends Component {
     }
   }
 
-  renderListNews = () => {
-    const {listCustomNews} = this.state;
-    if(!listCustomNews || listCustomNews.length === 0){
-      return null;
-    }
-    return listCustomNews.map((item, index) => {
-      return <div key={index}>{item.content}</div>
-    })
-  }
-
   render() {
+    const {listCustomNews} = this.state;
     return (
       <div>
-        {this.renderListNews()}
+        <NewsList listNews={listCustomNews}></NewsList>
       </div>
     )
   }

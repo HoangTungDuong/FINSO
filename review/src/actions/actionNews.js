@@ -1,0 +1,1 @@
+export const SELECT_NEWS = 'SELECT_NEWS';

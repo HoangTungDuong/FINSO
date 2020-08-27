@@ -1,4 +1,4 @@
-export const SERVER_URL = 'https://newsapi.org/';
+export const SERVER_URL = 'https://newsapi.org/v2/';
 export const TAB_VIEW_KEY = {
   HEADLINE_NEWS: 'headline_news',
   CUSTOM_NEWS: 'custom_news',

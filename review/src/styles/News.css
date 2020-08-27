@@ -1,0 +1,36 @@
+.img-news {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+}
+
+.list-news {
+  padding: 15px;
+}
+
+.news-overview{
+  display: flex;
+  flex-direction: row;
+}
+
+.news-description{
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  justify-content: center;
+}
+
+.news-description p {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.news-description small {
+  font-style: italic;
+}
+
+.icon-back {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+}

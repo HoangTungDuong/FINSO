@@ -4,6 +4,7 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { USER_DATA, USER_PREFERENCES } from '../constants/common';
+import { SAVE_USER_PROFILE } from '../actions/actionUserProfile';
 class ProfileComponent extends Component {
 
   constructor(props) {
@@ -37,13 +38,13 @@ class ProfileComponent extends Component {
       preference
     }
     localStorage.setItem(USER_DATA, JSON.stringify(savedData));
-    // this.props.dispatch({
-    //   type: SAVE_USER_PROFILE,
-    //   payload: {
-    //     userName: 'duong',
-    //     userPreference: USER_PREFERENCES[1]
-    //   }
-    // })
+    this.props.dispatch({
+      type: SAVE_USER_PROFILE,
+      payload: {
+        userName: name,
+        userPreference: preference
+      }
+    })
   }
 
   onSelectPreference = (event, value) => {
