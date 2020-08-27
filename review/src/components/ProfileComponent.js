@@ -33,6 +33,10 @@ class ProfileComponent extends Component {
 
   saveUserData = () => {
     const { name, preference } = this.state;
+    if(!name || !preference){
+      alert("Please enter all fields")
+      return;
+    }
     const savedData = {
       name,
       preference
@@ -45,6 +49,7 @@ class ProfileComponent extends Component {
         userPreference: preference
       }
     })
+    alert("User data has been saved successfully!")
   }
 
   onSelectPreference = (event, value) => {
