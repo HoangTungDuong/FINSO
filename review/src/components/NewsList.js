@@ -30,9 +30,9 @@ class NewsList extends Component {
       const imgNew = item.urlToImage ? item.urlToImage : imageDefault
       return (
         <div key={index}>
-          <div className="news-overview">
+          <div className="news-overview"  onClick={() => this.onNewsClicked(item)}>
             <img className="img-news" src={imgNew} alt="" />
-            <div className="news-description" onClick={() => this.onNewsClicked(item)}>
+            <div className="news-description">
               <b >{item.title}</b>
               {item.author && <small>By {item.author}</small>}
               <div>
