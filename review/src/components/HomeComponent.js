@@ -19,6 +19,9 @@ class HomeComponent extends Component {
 
   componentDidMount(){
     const data = getUserDataLocalStorage();
+    if(!data || !Object.keys(data).length){
+      return;
+    }
     this.props.dispatch({
       type: SAVE_USER_PROFILE,
       payload: {
