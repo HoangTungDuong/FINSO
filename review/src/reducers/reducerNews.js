@@ -1,4 +1,4 @@
-import { SELECT_NEWS } from '../actions/actionNews';
+import { SELECT_NEWS, SET_CURRENT_TAB } from '../actions/actionNews';
 import { initialState } from './initialState/initialStateNews';
 
 export default (state = initialState, action) => {
@@ -8,6 +8,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         selectedNews,
+      }
+    case SET_CURRENT_TAB:
+      const { currentTab } = action.payload;
+      return {
+        ...state,
+        currentTab,
       }
     default:
       return state;

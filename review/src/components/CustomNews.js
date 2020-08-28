@@ -14,23 +14,22 @@ class CustomNews extends Component {
 
   UNSAFE_componentWillMount(){
     if(this.props?.userPreference?.id){
-      getCustomNews(this.props.userPreference.id).then((news)=>{
-        this.setState({
-          listCustomNews: news.articles
-        })
-      })
+      this.getNews(this.props.userPreference.id);
     }
   }
 
   UNSAFE_componentWillReceiveProps(nextProps){
-    const { userPreference } = this.props;
-    if(!_.isEqual(nextProps.userPreference, userPreference)){
-      getCustomNews(nextProps.userPreference.id).then((news)=>{
-        this.setState({
-          listCustomNews: news.articles
-        })
-      })
+    if(this.props && nextProps && !_.isEqual(nextProps.userPreference, this.props.userPreference)){
+      this.getNews(nextProps.userPreference.id);
     }
+  }
+
+  getNews(id){
+    getCustomNews(id).then((news)=>{
+      this.setState({
+        listCustomNews: news.articles
+      })
+    })
   }
 
   render() {

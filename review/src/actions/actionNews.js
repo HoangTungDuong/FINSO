@@ -1,1 +1,2 @@
 export const SELECT_NEWS = 'SELECT_NEWS';
+export const SET_CURRENT_TAB = 'SET_CURRENT_TAB';
