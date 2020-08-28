@@ -44,7 +44,6 @@ class NewsDetail extends Component {
         </div>
       )
     }
-    console.log(selectedNews)
     return (
       <div>
         {this.renderBackBtn()}
